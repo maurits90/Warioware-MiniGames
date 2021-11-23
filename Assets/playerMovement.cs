@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class playerMovement : MonoBehaviour
 {
@@ -18,6 +19,8 @@ public class playerMovement : MonoBehaviour
 
     public float rememberGroundFor;
     float lastTimeGrounded;
+
+    public gameManager gemManager;
 
     // Start is called before the first frame update
     void Start()
@@ -85,6 +88,8 @@ public class playerMovement : MonoBehaviour
         if (collision.gameObject.tag == "enemyShield")
         {
             Destroy(gameObject);
+            gemManager.gameOverCanvas.SetActive(true);
+            Time.timeScale = 0;
         }
     }
 }

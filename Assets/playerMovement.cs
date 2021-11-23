@@ -8,9 +8,6 @@ public class playerMovement : MonoBehaviour
     public float moveSpeed;
     public float jumpForce = 7;
 
-    public int defaultJumps = 1;
-    int addiJumps;
-
     public float fallMultiplier = 2.5f;
     public float lowJumpMultiplier = 2f;
 
@@ -47,11 +44,10 @@ public class playerMovement : MonoBehaviour
     {
         if (Input.GetKey(KeyCode.Space) && (onGround || Time.time - lastTimeGrounded <= rememberGroundFor))
         {
-            if(addiJumps > 0)
-            {
-                rb.velocity = new Vector2(rb.velocity.x, jumpForce);
-                addiJumps--;
-            }
+
+            
+            rb.velocity = new Vector2(rb.velocity.x, jumpForce);
+            
             
         }
     }
@@ -63,7 +59,6 @@ public class playerMovement : MonoBehaviour
         if(collider != null)
         {
             onGround = true;
-            addiJumps = defaultJumps;
         } else
         {
             if (onGround)
@@ -85,4 +80,11 @@ public class playerMovement : MonoBehaviour
         }
     }
 
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "enemyShield")
+        {
+            Destroy(gameObject);
+        }
+    }
 }

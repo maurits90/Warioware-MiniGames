@@ -55,6 +55,7 @@
   <ItemGroup>
     <Compile Include="Assets\playerMovement.cs" />
     <Compile Include="Assets\enemyScript.cs" />
+    <Compile Include="Assets\gameManager.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">

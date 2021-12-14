@@ -53,9 +53,9 @@
     <UnityVersion>2020.3.16f1</UnityVersion>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="Assets\playerMovement.cs" />
-    <Compile Include="Assets\enemyScript.cs" />
     <Compile Include="Assets\gameManager.cs" />
+    <Compile Include="Assets\enemyScript.cs" />
+    <Compile Include="Assets\playerMovement.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">

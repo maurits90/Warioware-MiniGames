@@ -310,7 +310,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 2
   maxJump: 2
-  shieldTime: 2
+  shieldTime: 0.1
   theShield: {fileID: 582648601}
 --- !u!1 &194308749
 GameObject:

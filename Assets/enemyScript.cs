@@ -31,8 +31,8 @@ public class enemyScript : MonoBehaviour
         if(timer > shieldTime)
         {
             GameObject newShield = Instantiate(theShield);
-            newShield.transform.position = transform.position + new Vector3(Random.Range(1,2), 0, 0);
-            Destroy(newShield, 6);
+            newShield.transform.position = transform.position + new Vector3(Random.Range(1,2), 0, Random.Range(1,9));
+            Destroy(newShield, 1);
             timer = 0;
         }
         timer += Time.deltaTime;

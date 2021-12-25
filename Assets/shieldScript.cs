@@ -7,10 +7,8 @@ public class shieldScript : MonoBehaviour
 
     public float speed;
 
-    public float maxJump = 2;
-
     private float timer;
-    public float maxTimeStop = 1;
+    public float maxTime = 2;
 
     Rigidbody2D rb;
     // Start is called before the first frame update
@@ -27,10 +25,22 @@ public class shieldScript : MonoBehaviour
 
     void Move()
     {
-        transform.position += Vector3.left * speed * Time.deltaTime;
-        if (transform.position.x <= -12.2)
+        if (timer > maxTime)
         {
-            transform.position = new Vector3(12.2f, transform.position.y, 0f);
+            timer = 0;
         }
+        timer += Time.deltaTime;
+
+        if (timer >= 1)
+        {
+            // bugged cannot change position of gameobject while following a gameobject
+           // transform.position = new Vector3(-2f, 0f, 0f); 
+        }
+        if (timer <= 1)
+        {
+            // bugged cannot change position of gameobject while following a gameobject
+            // transform.position = new Vector3(2f, 0f, 0f);
+        }
+
     }
 }

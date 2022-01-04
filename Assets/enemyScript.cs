@@ -27,7 +27,8 @@ public class enemyScript : MonoBehaviour
     {
         asd.text = "" + timer.ToString("F0");
         Move();
-        UpAndDown();
+        // up and down cause enemy to froze
+        //UpAndDown();
     }
 
 

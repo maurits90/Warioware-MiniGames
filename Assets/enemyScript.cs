@@ -12,11 +12,14 @@ public class enemyScript : MonoBehaviour
     private float timer;
     public float maxTime = 2;
 
-    Rigidbody2D rb;
+    public Transform pos1,pos2;
+    public Transform startPos;
+
+    Vector3 nextPos;
+
     void Start()
     {
-        rb = GetComponent<Rigidbody2D>();
-        
+        nextPos = startPos.position;
     }
 
     // Update is called once per frame
@@ -24,17 +27,13 @@ public class enemyScript : MonoBehaviour
     {
         asd.text = "" + timer.ToString("F0");
         Move();
+        UpAndDown();
     }
 
 
-    void Move()
+    void UpAndDown()
     {
-        transform.position += Vector3.left * speed * Time.deltaTime;
-        if (transform.position.x <= -12.2f)
-        {
-            transform.position = new Vector3(12.2f, transform.position.y, 0f);
-        }
-        if(timer > maxTime)
+        if (timer > maxTime)
         {
             
             timer = 0;
@@ -50,4 +49,25 @@ public class enemyScript : MonoBehaviour
             transform.position += Vector3.down * speed * Time.deltaTime;
         }
     }
+
+    void Move()
+    {
+        if (transform.position == pos1.position)
+        {
+            nextPos = pos2.position;
+        }
+        if (transform.position == pos2.position)
+        {
+            nextPos = pos1.position;
+        }
+
+        transform.position = Vector3.MoveTowards(transform.position, nextPos, speed * Time.deltaTime);
+    }
+
+    private void OnDrawGizmos()
+    {
+        Gizmos.DrawLine(pos1.position, pos2.position);
+    }
+
+
 }

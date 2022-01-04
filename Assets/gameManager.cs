@@ -32,6 +32,7 @@ public class gameManager : MonoBehaviour
         }
         if(enemy == null)
         {
+            // next level
             gameWonCanvas.SetActive(true);
             time = time;
             Time.timeScale = 0;

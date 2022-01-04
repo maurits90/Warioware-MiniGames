@@ -91,5 +91,6 @@ public class playerMovement : MonoBehaviour
             gemManager.gameOverCanvas.SetActive(true);
             Time.timeScale = 0;
         }
+
     }
 }

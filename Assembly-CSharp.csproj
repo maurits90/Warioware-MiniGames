@@ -53,11 +53,14 @@
     <UnityVersion>2020.3.16f1</UnityVersion>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="Assets\gameManager.cs" />
-    <Compile Include="Assets\enemyScript.cs" />
-    <Compile Include="Assets\shieldScript.cs" />
-    <Compile Include="Assets\playerMovement.cs" />
-    <Compile Include="Assets\cloudScript.cs" />
+    <Compile Include="Assets\Scripts\gameManager.cs" />
+    <Compile Include="Assets\Scripts\enemyScript.cs" />
+    <Compile Include="Assets\Scripts\cloudScript.cs" />
+    <Compile Include="Assets\Scripts\shieldScript.cs" />
+    <Compile Include="Assets\Scripts\playerMovement.cs" />
+    <Compile Include="Assets\Scripts\cameraScript.cs" />
+    <Compile Include="Assets\Scripts\enemyFastScript.cs" />
+    <Compile Include="Assets\Scripts\audioScript.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
